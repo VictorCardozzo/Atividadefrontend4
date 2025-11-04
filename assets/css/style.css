@@ -1,0 +1,216 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+  background-color: var(--color-neutral-light);
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: var(--color-white);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:focus,
+nav a:hover {
+  outline: 2px solid var(--color-secondary);
+  text-decoration: underline;
+}
+
+/* Banner Principal */
+.banner-principal {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e0f2f1;
+}
+
+.banner-principal img {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.banner-principal h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--color-primary-dark);
+}
+
+.banner-principal p {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+/* Seção de Ações Sociais */
+.acao-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 60px;
+  background-color: var(--color-neutral-light);
+}
+
+.acao-social img {
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.acao-social .texto {
+  max-width: 500px;
+}
+
+.acao-social h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--color-primary-dark);
+}
+
+/* Seção de Projetos */
+.projetos {
+  padding: 40px 80px;
+  background-color: var(--color-white);
+}
+
+.projetos h2 {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.projetos ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* Botões */
+.btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover,
+.btn:focus {
+  background: var(--color-primary-dark);
+  outline: 2px solid var(--color-secondary);
+}
+
+/* Formulário */
+.form-cadastro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.form-cadastro label {
+  font-weight: bold;
+}
+
+.form-cadastro input {
+  flex: 1 1 45%;
+  min-width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-cadastro input:focus {
+  outline: 2px solid var(--color-secondary);
+}
+
+.form-cadastro .error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.form-cadastro button {
+  flex-basis: 100%;
+  align-self: center;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-primary-dark);
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav.active ul {
+    display: flex;
+  }
+
+  .acao-social {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .acao-social img {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Dark Mode e Alto Contraste */
+:root[data-theme='dark'] {
+  --color-primary: #004d40;
+  --color-primary-dark: #00251a;
+  --color-secondary: #ffb300;
+  --color-white: #e0f2f1;
+  --color-neutral-light: #121212;
+  --color-neutral-dark: #f5f5f5;
+}
+
+:root[data-theme='high-contrast'] {
+  --color-primary: #000000;
+  --color-primary-dark: #000000;
+  --color-secondary: #ffff00;
+  --color-white: #ffffff;
+  --color-neutral-light: #ffffff;
+  --color-neutral-dark: #000000;
+}

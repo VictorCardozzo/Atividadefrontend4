@@ -1,0 +1,33 @@
+/* Layout principal do site */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+}
+
+header, footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* Área principal */
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* sistema de 12 colunas */
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+/* Exemplo de seção ocupando 6 colunas no desktop */
+section {
+  grid-column: span 6;
+}
+@media (max-width: 1200px) { section { grid-column: span 8; } }
+@media (max-width: 992px)  { section { grid-column: span 12; } }
+@media (max-width: 768px)  { main { padding: var(--space-3); } }
+@media (max-width: 576px)  { h1 { font-size: var(--font-lg); } }
+@media (max-width: 400px)  { p { font-size: var(--font-sm); } }
